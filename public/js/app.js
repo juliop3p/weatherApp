@@ -14,12 +14,15 @@ weatherForm.addEventListener('submit', (event) => {
 
     const location = search.value
 
-    getWeather(location, (weather) => {        
+    getWeather(location, (weather) => {  
+        console.log(weather)
+        const { weatherStatus, temperatureHigh, temperatureMin } = weather.forecast    
         !weather.error ?
             weatherDiv.innerHTML = 
             `
                 <h3>${weather.location}</h3>
-                <h4>${weather.forecast}</h4>
+                <h4>${weatherStatus}</h4>
+                <h4>Temp. Max: ${temperatureHigh}°C, Temp. Min: ${temperatureMin}°C</h4>
             `
         :
             weatherDiv.innerHTML = 

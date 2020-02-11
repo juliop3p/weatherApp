@@ -10,9 +10,10 @@ module.exports = (latitude, longitude, callback) => {
             callback('Unable to find location!')
         } else {
             const { temperature, precipProbability } = body.currently
-            const { summary: wheaterStatus } = body.daily.data[0]
+            const { temperatureHigh, temperatureMin } = body.daily.data[0]
+            const { summary: weatherStatus } = body.daily.data[0]
             
-            callback(null, { wheaterStatus, temperature, precipProbability })
+            callback(null, { weatherStatus, temperature, precipProbability, temperatureHigh, temperatureMin })
         }
     })
 }
