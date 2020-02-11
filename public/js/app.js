@@ -1,5 +1,5 @@
 const getWeather = (location, callback) => {
-    fetch(`http://localhost:3000/weather?address=${location}`)
+    fetch(`/weather?address=${location}`)
         .then(response => response.json())
         .then(json => callback(json))
 }
