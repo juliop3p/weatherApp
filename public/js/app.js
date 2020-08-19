@@ -15,7 +15,6 @@ weatherForm.addEventListener('submit', (event) => {
     const location = search.value
 
     getWeather(location, (weather) => {  
-        console.log(weather)
         const { weatherStatus, temperatureHigh, temperatureMin } = weather.forecast    
         !weather.error ?
             weatherDiv.innerHTML = 
